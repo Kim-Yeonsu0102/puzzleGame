@@ -8,7 +8,7 @@ let Complete = document.querySelector(".Complete");
 
 const cheatKey = document.querySelector(".cheatKey");
 let tiles = document.querySelectorAll(".img-container > li");
-let tilesList = document.querySelectorAll(".wrapper section ul li");
+
 const complete = document.querySelector(".hidden");
 
 let isPlaying = false;
@@ -20,28 +20,6 @@ const dragged = {
     class: null,
     index: null,
 };
-
-
-
-
-function showImage() {
-    let imgArray = new Array();
-    imgArray[0] = "/img/baek.jpg";
-    imgArray[1] = "/img/seo.jpg";
-    imgArray[2] = "/img/yuye.jpg"
-    imgArray[3] = "/img/hwal.jpg";
-
-    let index = Math.round(imgArray.length * Math.random());
-
-    tilesList.style.background = `url(${ imgArray[index]})`
-
-
-}
-console.log(showImage)
-
-function showImage()
-
-
 
 cheatKey.addEventListener("click", function() {
     [...container.children].forEach((child) => {

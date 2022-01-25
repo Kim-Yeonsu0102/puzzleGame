@@ -84,7 +84,14 @@ $btnBg:rgb(253, 87, 115);
                 width: 150px;
                 height: 150px;
                 color: $white;
-                // background: url("objImg.src");
+            }
+            .backGround {
+                width: 150px;
+                height: 150px;
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                background-size: 100% 100%;
+                background: url("/img/1.jpg");
             }
             .list0 {
                 background-position-x: 0px;
