@@ -9,6 +9,10 @@ $btnBg:rgb(253, 87, 115);
     box-sizing: border-box;
 }
 
+.black {
+    background-color: $basic;
+}
+
 .wrapper {
     width: 80%;
     min-height: 100vh;
@@ -29,6 +33,8 @@ $btnBg:rgb(253, 87, 115);
         .play-time-area {
             font-size: 2em;
             color: $basic;
+            width: 60%;
+            display: flex;
         }
         .start-btn {
             width: 30%;
@@ -44,88 +50,106 @@ $btnBg:rgb(253, 87, 115);
             background-color: $title;
         }
     }
-    ul {
-        list-style: none;
-        border: 2px solid $btnBg;
-        box-sizing: border-box;
-        overflow: hidden;
+    section {
         margin: 10px 0;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        align-items: center;
-        justify-items: center;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: no-wrap;
         justify-content: center;
-        align-content: center;
-        // grid-gap: 2px;
-        li {
-            width: 150px;
-            height: 150px;
-            color: $white;
-            background: url("http://placeimg.com/600/600/1");
+        align-items: center;
+        background-color: #333;
+        .Complete {
+            z-index: 3;
+            position: absolute;
+            font-size: 100px;
+            color: red;
+            -webkit-text-stroke: 2px $white;
+            display: none;
+            transition: 1000;
         }
-        .list0 {
-            background-position-x: 0px;
-            background-position-y: 0px;
-        }
-        .list1 {
-            background-position-x: -150px;
-            background-position-y: 0px;
-        }
-        .list2 {
-            background-position-x: -300px;
-            background-position-y: 0px;
-        }
-        .list3 {
-            background-position-x: -450px;
-            background-position-y: 0px;
-        }
-        .list4 {
-            background-position-x: 0px;
-            background-position-y: -150px;
-        }
-        .list5 {
-            background-position-x: -150px;
-            background-position-y: -150px;
-        }
-        .list6 {
-            background-position-x: -300px;
-            background-position-y: -150px;
-        }
-        .list7 {
-            background-position-x: -450px;
-            background-position-y: -150px;
-        }
-        .list8 {
-            background-position-x: 0px;
-            background-position-y: -300px;
-        }
-        .list9 {
-            background-position-x: -150px;
-            background-position-y: -300px;
-        }
-        .list10 {
-            background-position-x: -300px;
-            background-position-y: -300px;
-        }
-        .list11 {
-            background-position-x: -450px;
-            background-position-y: -300px;
-        }
-        .list12 {
-            background-position-x: 0px;
-            background-position-y: -450px;
-        }
-        .list13 {
-            background-position-x: -150px;
-            background-position-y: -450px;
-        }
-        .list14 {
-            background-position-x: -300px;
-            background-position-y: -450px;
-        }
-        .list15 {
-            background-position-x: -450px;
-            background-position-y: -450px;
+        ul {
+            list-style: none;
+            border: 2px solid $btnBg;
+            box-sizing: border-box;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            align-content: center;
+            // grid-gap: 2px;
+            li {
+                width: 150px;
+                height: 150px;
+                color: $white;
+                // background: url("objImg.src");
+            }
+            .list0 {
+                background-position-x: 0px;
+                background-position-y: 0px;
+            }
+            .list1 {
+                background-position-x: -150px;
+                background-position-y: 0px;
+            }
+            .list2 {
+                background-position-x: -300px;
+                background-position-y: 0px;
+            }
+            .list3 {
+                background-position-x: -450px;
+                background-position-y: 0px;
+            }
+            .list4 {
+                background-position-x: 0px;
+                background-position-y: -150px;
+            }
+            .list5 {
+                background-position-x: -150px;
+                background-position-y: -150px;
+            }
+            .list6 {
+                background-position-x: -300px;
+                background-position-y: -150px;
+            }
+            .list7 {
+                background-position-x: -450px;
+                background-position-y: -150px;
+            }
+            .list8 {
+                background-position-x: 0px;
+                background-position-y: -300px;
+            }
+            .list9 {
+                background-position-x: -150px;
+                background-position-y: -300px;
+            }
+            .list10 {
+                background-position-x: -300px;
+                background-position-y: -300px;
+            }
+            .list11 {
+                background-position-x: -450px;
+                background-position-y: -300px;
+            }
+            .list12 {
+                background-position-x: 0px;
+                background-position-y: -450px;
+            }
+            .list13 {
+                background-position-x: -150px;
+                background-position-y: -450px;
+            }
+            .list14 {
+                background-position-x: -300px;
+                background-position-y: -450px;
+            }
+            .list15 {
+                background-position-x: -450px;
+                background-position-y: -450px;
+            }
         }
     }
 }
