@@ -124,3 +124,34 @@ container.addEventListener("drop", (e) => {
     isLast ? originPlace.after(obj) : originPlace.before(obj);
     checkStatus();
 });
+
+
+
+container.addEventListener("touchstart", (e) => {
+    const obj = e.target;
+    console.log({ obj });
+    dragged.el = obj;
+    dragged.class = obj.className;
+    dragged.index = [...obj.parentNode.children].indexOf(obj);
+});
+
+container.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    // console.log(e)
+});
+
+container.addEventListener("touchend", (e) => {
+    const obj = e.target;
+    let originPlace;
+    let isLast = false;
+    if (dragged.el.nextSibling) {
+        originPlace = dragged.el.nextSibling;
+    } else {
+        originPlace = dragged.el.previousSibling;
+        isLast = true;
+    }
+    const droppedIndex = [...obj.parentNode.children].indexOf(obj);
+    dragged.index > droppedIndex ? obj.before(dragged.el) : obj.after(dragged.el);
+    isLast ? originPlace.after(obj) : originPlace.before(obj);
+    checkStatus();
+});
