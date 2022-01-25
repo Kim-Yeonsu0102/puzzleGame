@@ -8,7 +8,7 @@ let Complete = document.querySelector(".Complete");
 
 const cheatKey = document.querySelector(".cheatKey");
 let tiles = document.querySelectorAll(".img-container > li");
-
+let tilesList = document.querySelectorAll(".img-container-area>ul > li");
 const complete = document.querySelector(".hidden");
 
 let isPlaying = false;
@@ -21,13 +21,14 @@ const dragged = {
     index: null,
 };
 
-cheatKey.addEventListener("click", function() {
-    [...container.children].forEach((child) => {
-        child.innerText = child.getAttribute("data-type");
-    });
-});
+// cheatKey.addEventListener("click", function() {
+//     [...container.children].forEach((child) => {
+//         child.innerText = child.getAttribute("data-type");
+//     });
+// });
 
 startBtn.addEventListener("click", () => {
+
     setGame();
 });
 
@@ -75,6 +76,7 @@ function checkStatus() {
         clearInterval(timeInterval);
 
         Complete.style.display = "block";
+
         startBtn.style.backgroundColor = "#999";
         startBtn.innerText = "Reset";
     }
