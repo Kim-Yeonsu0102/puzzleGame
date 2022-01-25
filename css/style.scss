@@ -1,3 +1,4 @@
+@import "variables";
 $basic:#333;
 $title:red;
 $white:#fff;
@@ -9,22 +10,35 @@ $btnBg:rgb(253, 87, 115);
     box-sizing: border-box;
 }
 
-.black {
-    background-color: $basic;
-}
-
 .wrapper {
-    width: 80%;
+    width: 98%;
+    overflow: hidden;
     min-height: 100vh;
-    margin: 0 auto;
+    margin: 10px auto;
     text-align: center;
     display: flex;
     flex-direction: column;
     flex-wrap: no-wrap;
-    justify-content: center;
+    @include desktop {
+        justify-content: center;
+    }
+    @include tablet {
+        justify-content: center;
+    }
+    @include mobile {
+        justify-content: flex-start;
+    }
     align-items: center;
     .time-area {
-        width: 580px;
+        @include desktop {
+            width: 580px;
+        }
+        @include tablet {
+            width: 580px;
+        }
+        @include mobile {
+            width: 100%;
+        }
         display: flex;
         flex-direction: row;
         flex-wrap: no-wrap;
@@ -51,6 +65,15 @@ $btnBg:rgb(253, 87, 115);
         }
     }
     section {
+        @include desktop {
+            width: 580px;
+        }
+        @include tablet {
+            width: 580px;
+        }
+        @include mobile {
+            width: 100%;
+        }
         margin: 10px 0;
         position: relative;
         display: flex;
@@ -81,74 +104,246 @@ $btnBg:rgb(253, 87, 115);
             align-content: center;
             // grid-gap: 2px;
             li {
-                width: 150px;
-                height: 150px;
+                @include desktop {
+                    width: 150px;
+                    height: 150px;
+                    background: url("/img/1.jpg");
+                }
+                @include tablet {
+                    width: 150px;
+                    height: 150px;
+                    background: url("/img/1.jpg");
+                }
+                @include mobile {
+                    width: 100px;
+                    height: 100px;
+                    background: url("/img/001.jpg");
+                }
                 color: $white;
-                background: url("/img/1.jpg");
             }
             .list0 {
-                background-position-x: 0px;
-                background-position-y: 0px;
+                @include desktop {
+                    background-position-x: 0px;
+                    background-position-y: 0px;
+                }
+                @include tablet {
+                    background-position-x: 0px;
+                    background-position-y: 0px;
+                }
+                @include mobile {
+                    background-position-x: 0px;
+                    background-position-y: 0px;
+                }
             }
             .list1 {
-                background-position-x: -150px;
-                background-position-y: 0px;
+                @include desktop {
+                    background-position-x: -150px;
+                    background-position-y: 0px;
+                }
+                @include tablet {
+                    background-position-x: -150px;
+                    background-position-y: 0px;
+                }
+                @include mobile {
+                    background-position-x: -100px;
+                    background-position-y: 0px;
+                }
             }
             .list2 {
-                background-position-x: -300px;
-                background-position-y: 0px;
+                @include desktop {
+                    background-position-x: -300px;
+                    background-position-y: 0px;
+                }
+                @include tablet {
+                    background-position-x: -300px;
+                    background-position-y: 0px;
+                }
+                @include mobile {
+                    background-position-x: -200px;
+                    background-position-y: 0px;
+                }
             }
             .list3 {
-                background-position-x: -450px;
-                background-position-y: 0px;
+                @include desktop {
+                    background-position-x: -450px;
+                    background-position-y: 0px;
+                }
+                @include tablet {
+                    background-position-x: -450px;
+                    background-position-y: 0px;
+                }
+                @include mobile {
+                    background-position-x: -300px;
+                    background-position-y: 0px;
+                }
             }
             .list4 {
-                background-position-x: 0px;
-                background-position-y: -150px;
+                @include desktop {
+                    background-position-x: 0px;
+                    background-position-y: -150px;
+                }
+                @include tablet {
+                    background-position-x: 0px;
+                    background-position-y: -150px;
+                }
+                @include mobile {
+                    background-position-x: 0px;
+                    background-position-y: -100px;
+                }
             }
             .list5 {
-                background-position-x: -150px;
-                background-position-y: -150px;
+                @include desktop {
+                    background-position-x: -150px;
+                    background-position-y: -150px;
+                }
+                @include tablet {
+                    background-position-x: -150px;
+                    background-position-y: -150px;
+                }
+                @include mobile {
+                    background-position-x: -100px;
+                    background-position-y: -100px;
+                }
             }
             .list6 {
-                background-position-x: -300px;
-                background-position-y: -150px;
+                @include desktop {
+                    background-position-x: -300px;
+                    background-position-y: -150px;
+                }
+                @include tablet {
+                    background-position-x: -300px;
+                    background-position-y: -150px;
+                }
+                @include mobile {
+                    background-position-x: -200px;
+                    background-position-y: -100px;
+                }
             }
             .list7 {
-                background-position-x: -450px;
-                background-position-y: -150px;
+                @include desktop {
+                    background-position-x: -450px;
+                    background-position-y: -150px;
+                }
+                @include tablet {
+                    background-position-x: -450px;
+                    background-position-y: -150px;
+                }
+                @include mobile {
+                    background-position-x: -300px;
+                    background-position-y: -100px;
+                }
             }
             .list8 {
-                background-position-x: 0px;
-                background-position-y: -300px;
+                @include desktop {
+                    background-position-x: 0px;
+                    background-position-y: -300px;
+                }
+                @include tablet {
+                    background-position-x: 0px;
+                    background-position-y: -300px;
+                }
+                @include mobile {
+                    background-position-x: 0px;
+                    background-position-y: -200px;
+                }
             }
             .list9 {
-                background-position-x: -150px;
-                background-position-y: -300px;
+                @include desktop {
+                    background-position-x: -150px;
+                    background-position-y: -300px;
+                }
+                @include tablet {
+                    background-position-x: -150px;
+                    background-position-y: -300px;
+                }
+                @include mobile {
+                    background-position-x: -100px;
+                    background-position-y: -200px;
+                }
             }
             .list10 {
-                background-position-x: -300px;
-                background-position-y: -300px;
+                @include desktop {
+                    background-position-x: -300px;
+                    background-position-y: -300px;
+                }
+                @include tablet {
+                    background-position-x: -300px;
+                    background-position-y: -300px;
+                }
+                @include mobile {
+                    background-position-x: -200px;
+                    background-position-y: -200px;
+                }
             }
             .list11 {
-                background-position-x: -450px;
-                background-position-y: -300px;
+                @include desktop {
+                    background-position-x: -450px;
+                    background-position-y: -300px;
+                }
+                @include tablet {
+                    background-position-x: -450px;
+                    background-position-y: -300px;
+                }
+                @include mobile {
+                    background-position-x: -300px;
+                    background-position-y: -200px;
+                }
             }
             .list12 {
-                background-position-x: 0px;
-                background-position-y: -450px;
+                @include desktop {
+                    background-position-x: 0px;
+                    background-position-y: -400px;
+                }
+                @include tablet {
+                    background-position-x: 0px;
+                    background-position-y: -400px;
+                }
+                @include mobile {
+                    background-position-x: 0px;
+                    background-position-y: -300px;
+                }
             }
             .list13 {
-                background-position-x: -150px;
-                background-position-y: -450px;
+                @include desktop {
+                    background-position-x: -150px;
+                    background-position-y: -450px;
+                }
+                @include tablet {
+                    background-position-x: -150px;
+                    background-position-y: -450px;
+                }
+                @include mobile {
+                    background-position-x: -100px;
+                    background-position-y: -300px;
+                }
             }
             .list14 {
-                background-position-x: -300px;
-                background-position-y: -450px;
+                @include desktop {
+                    background-position-x: -300px;
+                    background-position-y: -450px;
+                }
+                @include tablet {
+                    background-position-x: -300px;
+                    background-position-y: -450px;
+                }
+                @include mobile {
+                    background-position-x: -200px;
+                    background-position-y: -300px;
+                }
             }
             .list15 {
-                background-position-x: -450px;
-                background-position-y: -450px;
+                @include desktop {
+                    background-position-x: -450px;
+                    background-position-y: -450px;
+                }
+                @include tablet {
+                    background-position-x: -450px;
+                    background-position-y: -450px;
+                }
+                @include mobile {
+                    background-position-x: -300px;
+                    background-position-y: -300px;
+                }
             }
         }
     }
