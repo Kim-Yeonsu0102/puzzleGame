@@ -1,15 +1,12 @@
-const container = document.querySelector(".img-container");
 const startBtn = document.querySelector(".start-btn");
 const gameTxt = document.querySelector(".game-txt");
 const playTimeArea = document.querySelector(".play-time-area");
 let playTime = document.querySelector(".play-time");
 let imgArea = document.querySelector(".img-container-area");
 let Complete = document.querySelector(".Complete");
-
 const cheatKey = document.querySelector(".cheatKey");
+const container = document.querySelector(".img-container");
 let tiles = document.querySelectorAll(".img-container > li");
-let tilesList = document.querySelectorAll(".img-container-area>ul > li");
-const complete = document.querySelector(".hidden");
 
 let isPlaying = false;
 let timeInterval = null;
@@ -28,7 +25,6 @@ const dragged = {
 // });
 
 startBtn.addEventListener("click", () => {
-
     setGame();
 });
 
@@ -80,20 +76,6 @@ function checkStatus() {
         startBtn.style.backgroundColor = "#999";
         startBtn.innerText = "Reset";
     }
-
-    function gameOver() {
-        Complete.style.display = "block";
-        Complete.innerText = "GAME OVER";
-        container.style.opacity = "0.6";
-        startBtn.style.backgroundColor = "#999";
-        startBtn.innerText = "Reset";
-    }
-
-    if (time === 120) {
-        isPlaying = false;
-        clearInterval(timeInterval);
-        gameOver();
-    }
 }
 
 container.addEventListener("dragstart", (e) => {
@@ -110,37 +92,6 @@ container.addEventListener("dragover", (e) => {
 });
 
 container.addEventListener("drop", (e) => {
-    const obj = e.target;
-    let originPlace;
-    let isLast = false;
-    if (dragged.el.nextSibling) {
-        originPlace = dragged.el.nextSibling;
-    } else {
-        originPlace = dragged.el.previousSibling;
-        isLast = true;
-    }
-    const droppedIndex = [...obj.parentNode.children].indexOf(obj);
-    dragged.index > droppedIndex ? obj.before(dragged.el) : obj.after(dragged.el);
-    isLast ? originPlace.after(obj) : originPlace.before(obj);
-    checkStatus();
-});
-
-
-
-container.addEventListener("touchstart", (e) => {
-    const obj = e.target;
-    console.log({ obj });
-    dragged.el = obj;
-    dragged.class = obj.className;
-    dragged.index = [...obj.parentNode.children].indexOf(obj);
-});
-
-container.addEventListener("touchmove", (e) => {
-    e.preventDefault();
-    // console.log(e)
-});
-
-container.addEventListener("touchend", (e) => {
     const obj = e.target;
     let originPlace;
     let isLast = false;
