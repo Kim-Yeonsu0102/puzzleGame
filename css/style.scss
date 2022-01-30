@@ -107,17 +107,17 @@ $btnBg:rgb(253, 87, 115);
                 @include desktop {
                     width: 150px;
                     height: 150px;
-                    background: url("/img/2.jpg");
+                    background: url("/img/5.jpg");
                 }
                 @include tablet {
                     width: 150px;
                     height: 150px;
-                    background: url("/img/2.jpg");
+                    background: url("/img/5.jpg");
                 }
                 @include mobile {
                     width: 100px;
                     height: 100px;
-                    background: url("/img/002.jpg");
+                    background: url("/img/005.jpg");
                 }
                 color: $white;
             }
