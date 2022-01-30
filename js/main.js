@@ -27,6 +27,10 @@ const dragged = {
 // });
 
 
+
+
+
+
 //핸들링 
 startBtn.addEventListener("click", () => {
     setGame();

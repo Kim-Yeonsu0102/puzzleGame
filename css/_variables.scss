@@ -37,3 +37,18 @@ $desktop: 1024px;
     width: $calculated;
     height: $calculated;
 }
+
+// $randomDesk:'background: url("/img/#{randomNum(1, 6)}.jpg")';
+// $randomMobile: 'background: url("/img/#{randomNum(7, 11)}.jpg")';
+@function randomNum($min, $max) {
+    @if( $max==11) {
+        $rand: random();
+        $randomNum: $min + floor($rand * (($max - $min) + 1));
+        @return $randomNum;
+    }
+    @else if( $max==6) {
+        $rand: random();
+        $randomNum: $min + floor($rand * (($max - $min) + 1));
+        @return $randomNum;
+    }
+}

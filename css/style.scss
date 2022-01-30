@@ -1,9 +1,9 @@
 @import "variables";
-$basic:#333;
-$title:red;
-$white:#fff;
-$bg:#ccc;
-$btnBg:rgb(253, 87, 115);
+$basic: #333;
+$title: red;
+$white: #fff;
+$bg: #ccc;
+$btnBg: rgb(253, 87, 115);
 * {
     margin: 0;
     padding: 0;
@@ -107,17 +107,17 @@ $btnBg:rgb(253, 87, 115);
                 @include desktop {
                     width: 150px;
                     height: 150px;
-                    background: url("/img/6.jpg");
+                    background: url("/img/#{randomNum(1, 6)}.jpg");
                 }
                 @include tablet {
                     width: 150px;
                     height: 150px;
-                    background: url("/img/6.jpg");
+                    background: url("/img/#{randomNum(1, 6)}.jpg");
                 }
                 @include mobile {
                     width: 100px;
                     height: 100px;
-                    background: url("/img/006.jpg");
+                    background: url("/img/#{randomNum(7, 11)}.jpg");
                 }
                 color: $white;
             }
