@@ -7,6 +7,7 @@ let Complete = document.querySelector(".Complete");
 const cheatKey = document.querySelector(".cheatKey");
 const container = document.querySelector(".img-container");
 let tiles = document.querySelectorAll(".img-container > li");
+let tilesBG = document.querySelectorAll(".backGround");
 
 let isPlaying = false;
 let timeInterval = null;
@@ -26,34 +27,42 @@ const dragged = {
 //     });
 // });
 
+function randomNum(min, max) {
+    var randNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    for (let i = 0; i < tilesBG.length; i++) {
+        tilesBG[i].style.backgroundImage = `url("/img/${randNum}.jpg")`;
+    }
 
+    return tilesBG;
+}
 
+// if (document.body.offsetWidth >= 768) {
+//     randomNum(1, 6);
+// } else if (document.body.offsetWidth < 768) {
+//     randomNum(7, 11);
+// }
 
-
-
-//핸들링 
+//핸들링
 startBtn.addEventListener("click", () => {
     setGame();
-
+    if (document.body.offsetWidth >= 768) {
+        randomNum(1, 6);
+    } else if (document.body.offsetWidth < 768) {
+        randomNum(7, 11);
+    }
 });
 
-
-
 //함수
-
 
 function nowPlaying() {
     startBtn.style.backgroundColor = "#5ab6d2";
     startBtn.style.cursor = "not-allowed";
     startBtn.innerText = "Playing";
-    startBtn.disabled = true
-
-
-
+    startBtn.disabled = true;
 }
 
 function setGame() {
-    nowPlaying()
+    nowPlaying();
     time = 0;
     Complete.style.display = "none";
     container.style.opacity = "1";
@@ -68,11 +77,6 @@ function setGame() {
     gameTiles.forEach((tile) => {
         container.appendChild(tile);
     });
-
-
-
-
-
 }
 
 function shuffle(array) {
@@ -87,7 +91,6 @@ function shuffle(array) {
 }
 
 function checkStatus() {
-
     const currentList = [...container.children];
 
     const unMatched = currentList.filter((list, index) => {
@@ -97,7 +100,6 @@ function checkStatus() {
     if (unMatched.length === 0) {
         isPlaying = false;
 
-
         clearInterval(timeInterval);
         startBtn.disabled = false;
         startBtn.style.cursor = "pointer";
@@ -105,8 +107,6 @@ function checkStatus() {
 
         startBtn.style.backgroundColor = "#999";
         startBtn.innerText = "Reset";
-
-
     }
 }
 

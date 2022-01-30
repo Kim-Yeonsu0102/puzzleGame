@@ -81,7 +81,6 @@ $btnBg: rgb(253, 87, 115);
         flex-wrap: no-wrap;
         justify-content: center;
         align-items: center;
-        background-color: #333;
         .Complete {
             z-index: 3;
             position: absolute;
@@ -91,9 +90,9 @@ $btnBg: rgb(253, 87, 115);
             display: none;
             transition: 1000;
         }
-        ul {
+        ul.img-container {
             list-style: none;
-            border: 2px solid $btnBg;
+            border: 2px solid $bg;
             box-sizing: border-box;
             overflow: hidden;
             display: grid;
@@ -107,17 +106,17 @@ $btnBg: rgb(253, 87, 115);
                 @include desktop {
                     width: 150px;
                     height: 150px;
-                    background: url("/img/#{randomNum(1, 6)}.jpg");
+                    background: url("/img/index_bg.jpg");
                 }
                 @include tablet {
                     width: 150px;
                     height: 150px;
-                    background: url("/img/#{randomNum(1, 6)}.jpg");
+                    background: url("/img/index_bg.jpg");
                 }
                 @include mobile {
                     width: 100px;
                     height: 100px;
-                    background: url("/img/#{randomNum(7, 11)}.jpg");
+                    background: url("/img/m_index_bg.jpg");
                 }
                 color: $white;
             }

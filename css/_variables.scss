@@ -40,15 +40,16 @@ $desktop: 1024px;
 
 // $randomDesk:'background: url("/img/#{randomNum(1, 6)}.jpg")';
 // $randomMobile: 'background: url("/img/#{randomNum(7, 11)}.jpg")';
-@function randomNum($min, $max) {
-    @if( $max==11) {
-        $rand: random();
-        $randomNum: $min + floor($rand * (($max - $min) + 1));
-        @return $randomNum;
-    }
-    @else if( $max==6) {
-        $rand: random();
-        $randomNum: $min + floor($rand * (($max - $min) + 1));
-        @return $randomNum;
-    }
-}
+// @function randomNum($min, $max) {
+//     @if( $max==11) {
+//         $rand: random();
+//         $randomNum: $min + floor($rand * (($max - $min) + 1));
+//         @return $randomNum;
+//     }
+//     @else if( $max==6) {
+//         $rand: random();
+//         $randomNum: $min + floor($rand * (($max - $min) + 1));
+//         @return $randomNum;
+//     }
+// }
+// $desktopBG:'url("http://placeimg.com/600/600/any?nocache=#{floor(random())}")';
