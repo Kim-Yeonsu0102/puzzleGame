@@ -18,15 +18,34 @@ const dragged = {
     index: null,
 };
 
-// cheatKey.addEventListener("click", function() {
-//     [...container.children].forEach((child) => {
-//         child.innerText = child.getAttribute("data-type");
-//     });
-// });
+//개발자용 힌트버튼
 
+cheatKey.addEventListener("click", function() {
+    [...container.children].forEach((child) => {
+        child.innerText = child.getAttribute("data-type");
+    });
+});
+
+
+//핸들링 
 startBtn.addEventListener("click", () => {
     setGame();
+
 });
+
+
+
+//함수
+
+
+function nowPlaying() {
+    startBtn.style.backgroundColor = "#5ab6d2";
+    startBtn.style.cursor = "not-allowed";
+    startBtn.innerText = "Playing";
+
+    startBtn.disabled = true
+
+}
 
 function setGame() {
     time = 0;
@@ -44,8 +63,10 @@ function setGame() {
         container.appendChild(tile);
     });
 
-    startBtn.style.backgroundColor = "#5ab6d2";
-    startBtn.innerText = "Playing";
+    nowPlaying()
+
+
+
 }
 
 function shuffle(array) {
@@ -68,6 +89,7 @@ function checkStatus() {
 
     if (unMatched.length === 0) {
         isPlaying = false;
+        startBtn.disabled = false
 
         clearInterval(timeInterval);
 
