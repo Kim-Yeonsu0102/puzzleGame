@@ -138,3 +138,42 @@ container.addEventListener("drop", (e) => {
     isLast ? originPlace.after(obj) : originPlace.before(obj);
     checkStatus();
 });
+
+
+images.addEventListener('touchstart', (e) => {
+    const obj = e.target;
+    console.log({ obj });
+    dragged.el = obj;
+    dragged.class = obj.className;
+    dragged.index = [...obj.parentNode.children].indexOf(obj);
+});
+images.addEventListener('touchend', (e) => {
+    const obj = e.target;
+    let originPlace;
+    let isLast = false;
+    if (dragged.el.nextSibling) {
+        originPlace = dragged.el.nextSibling;
+    } else {
+        originPlace = dragged.el.previousSibling;
+        isLast = true;
+    }
+    const droppedIndex = [...obj.parentNode.children].indexOf(obj);
+    dragged.index > droppedIndex ? obj.before(dragged.el) : obj.after(dragged.el);
+    isLast ? originPlace.after(obj) : originPlace.before(obj);
+    checkStatus();
+});
+
+
+
+
+
+
+// tiles.addEventListener("touchstart", handleStart, false);
+// tiles.addEventListener("touchend", handleEnd, false);
+// tiles.addEventListener("touchcancel", handleCancel, false);
+// tiles.addEventListener("touchleave", handleEnd, false);
+// tiles.addEventListener("touchmove", handleMove, false);
+
+// function handleStart(event) {
+//     // Handle the start of the touch
+// }
