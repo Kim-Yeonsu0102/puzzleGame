@@ -42,12 +42,14 @@ function nowPlaying() {
     startBtn.style.backgroundColor = "#5ab6d2";
     startBtn.style.cursor = "not-allowed";
     startBtn.innerText = "Playing";
-
     startBtn.disabled = true
+
+
 
 }
 
 function setGame() {
+    nowPlaying()
     time = 0;
     Complete.style.display = "none";
     container.style.opacity = "1";
@@ -63,7 +65,7 @@ function setGame() {
         container.appendChild(tile);
     });
 
-    nowPlaying()
+
 
 
 
@@ -81,6 +83,7 @@ function shuffle(array) {
 }
 
 function checkStatus() {
+
     const currentList = [...container.children];
 
     const unMatched = currentList.filter((list, index) => {
@@ -89,14 +92,17 @@ function checkStatus() {
 
     if (unMatched.length === 0) {
         isPlaying = false;
-        startBtn.disabled = false
+
 
         clearInterval(timeInterval);
-
+        startBtn.disabled = false;
+        startBtn.style.cursor = "pointer";
         Complete.style.display = "block";
 
         startBtn.style.backgroundColor = "#999";
         startBtn.innerText = "Reset";
+
+
     }
 }
 
