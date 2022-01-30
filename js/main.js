@@ -20,11 +20,11 @@ const dragged = {
 
 //개발자용 힌트버튼
 
-cheatKey.addEventListener("click", function() {
-    [...container.children].forEach((child) => {
-        child.innerText = child.getAttribute("data-type");
-    });
-});
+// cheatKey.addEventListener("click", function() {
+//     [...container.children].forEach((child) => {
+//         child.innerText = child.getAttribute("data-type");
+//     });
+// });
 
 
 //핸들링 
